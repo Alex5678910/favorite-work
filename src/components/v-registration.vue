@@ -1,29 +1,12 @@
 <template>
     <div class="v-registration">
-        <a href="#">Регистрация</a>
-        <v-vuelidate></v-vuelidate>
+        <router-link to="/validate">Регистрация</router-link>
     </div>
 </template>
 
 <script>
-    import vVuevalidate from './v-vuelidate'
-
     export default {
         name: "v-registration",
-        comments: {
-            vVuevalidate,
-        },
-        props: {},
-        data() {
-            return{
-
-            }
-        },
-        computed: {},
-        methods: {},
-        watch:{},
-        mounted() {
-        }
     }
 </script>
 
@@ -33,5 +16,8 @@
         text-decoration: none;
         color: #2c3e50;
         white-space: nowrap;
+    }
+    .v-registration{
+        text-align: center;
     }
 </style>

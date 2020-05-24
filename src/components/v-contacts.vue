@@ -1,13 +1,13 @@
 <template>
     <div class="v-contacts">
-        <a href="#">О нас</a>
+        <router-link to="/contacts">О нас</router-link>
     </div>
 </template>
 
 <script>
     export default {
         name: "v-contacts",
-        comments: {},
+        components: {},
         props: {},
         data() {
             return{

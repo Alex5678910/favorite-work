@@ -2,10 +2,11 @@
     <div class="v-cities">
         <button
                 class="btn"
-                @click="showPopupInfo"
+                @click="showPopup"
         >Ваш город
         </button>
-        <v-popup v-if="isInfoPopupVisible"/>
+        <v-popup v-if="isIn"
+                 @fill="showPopup"/>
     </div>
 </template>
 
@@ -20,18 +21,14 @@
         props: {},
         data() {
             return {
-                isInfoPopupVisible: false
+                isIn: false
             }
         },
-        computed: {},
         methods: {
-            showPopupInfo() {
-                this.isInfoPopupVisible = !this.isInfoPopupVisible
+            showPopup() {
+                this.isIn = !this.isIn
             }
         },
-        watch: {},
-        mounted() {
-        }
     }
 </script>
 

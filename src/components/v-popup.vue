@@ -1,61 +1,22 @@
 <template>
     <div class="v-popup">
         <div class="v-popup_footer">
-            <button class="close">Закрыть</button>
+            <button class="close" @click="showPop">Закрыть</button>
         </div>
         <div class="v-popup_header">
             <ul>
-                <li><a href="#">Самара</a></li>
-                <li><a href="#">Тольятти</a></li>
-                <li><a href="#">Москва</a></li>
-                <li><a href="#">Ростов</a></li>
-                <li><a href="#">Саратов</a></li>
-                <li><a href="#">Челябинск</a></li>
-                <li><a href="#">Оренбург</a></li>
-                <li><a href="#">Сызрань</a></li>
-                <li><a href="#">Воронеж</a></li>
-                <li><a href="#">Орск</a></li>
+                <router-link :to="item.city" tag="li" v-for="item in itemsOne" :key="item"><a>{{item.city}}</a></router-link>
             </ul>
             <ul>
-                <li><a href="#">Махачкала</a></li>
-                <li><a href="#">Хабаровск</a></li>
-                <li><a href="#">Мурманск</a></li>
-                <li><a href="#">Петергов</a></li>
-                <li><a href="#">Грозный</a></li>
-                <li><a href="#">Липецк</a></li>
-                <li><a href="#">Рязань</a></li>
-                <li><a href="#">Астрахань</a></li>
-                <li><a href="#">Вологда</a></li>
-                <li><a href="#">Киров</a></li>
+                <router-link :to="item.city" tag="li" v-for="item in itemsTwo" :key="item"><a>{{item.city}}</a></router-link>
             </ul>
             <ul>
-                <li><a href="#">Пенза</a></li>
-                <li><a href="#">Ульяновск</a></li>
-                <li><a href="#">Красноярск</a></li>
-                <li><a href="#">Краснодар</a></li>
-                <li><a href="#">Сочи</a></li>
-                <li><a href="#">Адлер</a></li>
-                <li><a href="#">Новочеркаск</a></li>
-                <li><a href="#">Черкеск</a></li>
-                <li><a href="#">Уфа</a></li>
-                <li><a href="#">Новороссийск</a></li>
+                <router-link :to="item.city" tag="li" v-for="item in itemsThree" :key="item"><a>{{item.city}}</a></router-link>
             </ul>
             <ul>
-                <li><a href="#">Казань</a></li>
-                <li><a href="#">Ярославль</a></li>
-                <li><a href="#">Свердловск</a></li>
-                <li><a href="#">Благовещенск</a></li>
-                <li><a href="#">Ставрополь</a></li>
-                <li><a href="#">Смоленск</a></li>
-                <li><a href="#">Тамбов</a></li>
-                <li><a href="#">Тула</a></li>
-                <li><a href="#">Саранск</a></li>
-                <li><a href="#">Псков</a></li>
+                <router-link :to="item.city" tag="li" v-for="item in itemsFour" :key="item"><a>{{item.city}}</a></router-link>
             </ul>
-            <!--<span><i clas#s="material-icons">close</i></span> иконки разные нормальные-->
-        </div>
-        <div class="v-popup_content">
-            <slot></slot>
+            <!--<span><i class="material-icons">close</i></span> иконки разные нормальные-->
         </div>
     </div>
 </template>
@@ -63,6 +24,63 @@
 <script>
     export default {
         name: "v-popup",
+        data() {
+            return {
+                itemsOne: [
+                    {city: 'Самара' },
+                    {city: 'Тольятти' },
+                    {city: 'Москва' },
+                    {city: 'Ростов' },
+                    {city: 'Саратов' },
+                    {city: 'Челябинск' },
+                    {city: 'Оренбург' },
+                    {city: 'Сызрань' },
+                    {city: 'Воронеж' },
+                    {city: 'Орск' },
+                ],
+                itemsTwo: [
+                    {city: 'Махачкала' },
+                    {city: 'Хабаровск' },
+                    {city: 'Мурманск' },
+                    {city: 'Петергов' },
+                    {city: 'Грозный' },
+                    {city: 'Липецк' },
+                    {city: 'Рязань' },
+                    {city: 'Астрахань' },
+                    {city: 'Вологда' },
+                    {city: 'Киров' },
+                ],
+                itemsThree: [
+                    {city: 'Пенза' },
+                    {city: 'Ульяновск' },
+                    {city: 'Красноярск' },
+                    {city: 'Краснодар' },
+                    {city: 'Сочи' },
+                    {city: 'Адлер' },
+                    {city: 'Новочеркаск' },
+                    {city: 'Черкеск' },
+                    {city: 'Уфа' },
+                    {city: 'Новороссийск' },
+                ],
+                itemsFour: [
+                    {city: 'Казань' },
+                    {city: 'Ярославль' },
+                    {city: 'Свердловск' },
+                    {city: 'Благовещенск' },
+                    {city: 'Ставрополь' },
+                    {city: 'Смоленск' },
+                    {city: 'Тамбов' },
+                    {city: 'Тула' },
+                    {city: 'Саранск' },
+                    {city: 'Псков' },
+                ]
+            }
+        },
+        methods: {
+            showPop() {
+                this.$emit('fill')
+            },
+        }
     }
 </script>
 

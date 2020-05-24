@@ -1,13 +1,13 @@
 <template>
     <div class="v-enter">
-        <a href="#">Вход</a>
+        <router-link to="">Вход</router-link>
     </div>
 </template>
 
 <script>
     export default {
         name: "v-enter",
-        comments: {},
+        components: {},
         props: {},
         data() {
             return{
